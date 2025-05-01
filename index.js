@@ -16,12 +16,10 @@ console.log({indexClientUrl:  process.env.FRONTEND_URL})
 
 app.use(cors({
   // origin: process.env.FRONTEND_URL || "*",
-  origin: "*", // Temporarily allow all origins for debugging
+  origin: "*",
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
-
-// app.options('*', cors())
 
 app.use(express.json());
 
