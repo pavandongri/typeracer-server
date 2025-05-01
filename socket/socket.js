@@ -1,9 +1,10 @@
 const socketIo = require('socket.io');
 
 const initSocket = (server) => {
+    console.log({initSocketClientUrl:  process.env.FRONTEND_URL})
     const io = socketIo(server, {
         cors: {
-            origin: process.env.FRONTEND_URL,
+            origin: process.env.FRONTEND_URL || "*",
             methods: ["GET", "POST"]
         }
     });
