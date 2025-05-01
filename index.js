@@ -15,7 +15,8 @@ const server = http.createServer(app);
 console.log({indexClientUrl:  process.env.FRONTEND_URL})
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "*",
+  // origin: process.env.FRONTEND_URL || "*",
+  origin: "*", // Temporarily allow all origins for debugging
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
