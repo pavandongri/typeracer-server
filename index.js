@@ -15,10 +15,12 @@ const server = http.createServer(app);
 console.log({indexClientUrl:  process.env.FRONTEND_URL})
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "*",
-  methods: ['GET', 'POST'],
+  origin: process.env.FRONTEND_URL,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
+
+app.options('*', cors())
 
 app.use(express.json());
 
